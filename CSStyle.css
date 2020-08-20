@@ -176,12 +176,23 @@ img{
     flex: 1;
 }
 
+
 @media only screen and (max-width: 600px) {
+
+    body {
+    height: 100%;
+ max-width: 400px;
+
+}
+    
+/*
     img{
   height: 100%;
         width: 100%;
   margin: 0;
 }
+*/
+
 }
 /*
 .keys1 {
