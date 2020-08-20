@@ -1,1 +1,1 @@
-<?php include_once("js/music.js"); ?>
+<?php include_once("index.html"); ?>

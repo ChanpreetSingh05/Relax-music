@@ -82,21 +82,21 @@ function randRange(maxNum, minNum) {
 }
 
 function createRain() {
-        $('#rain').append('<img src="Images/rain1.jpg" alt ="rain" class="night img-fluid img-responsive"/>');
+//        $('#rain').append('<img src="Images/rain1.jpg" alt ="rain" class="night img-fluid img-responsive"/>');
 
-//    $("#rain").css({
-//        "background-image": 'url(Images/rain1.jpg)',
-//        "background-size": 'cover',
-//    
-//'-webkit-background-size': '100%', 
-//'-moz-background-size': '100%', 
-//'-o-background-size': '100%',
-//'background-size': '100%', 
-//'-webkit-background-size': 'cover', 
-//'-moz-background-size': 'cover', 
-//'-o-background-size': 'cover',
-//'background-size': 'cover',
-//    });
+    $("#rain").css({
+        "background-image": 'url(Images/rain1.jpg)',
+        "background-size": 'cover',
+    
+'-webkit-background-size': '100%', 
+'-moz-background-size': '100%', 
+'-o-background-size': '100%',
+'background-size': '100%', 
+'-webkit-background-size': 'cover', 
+'-moz-background-size': 'cover', 
+'-o-background-size': 'cover',
+'background-size': 'cover',
+    });
     for (i = 0; i < nbDrop; i++) {
         var dropLeft = randRange(0, 2000);
         var dropTop = randRange(-1000, 1500);
