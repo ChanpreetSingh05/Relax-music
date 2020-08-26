@@ -6,7 +6,6 @@ window.addEventListener('load', () => {
     var sounds = document.querySelectorAll(".music");
     var keys = document.querySelectorAll(".keys div");
 
-
     keys.forEach((key, index) => {
         key.addEventListener("click", function () {
             if (prev == 5) {
@@ -31,6 +30,10 @@ window.addEventListener('load', () => {
 });
 
 function back(index) {
+
+    //    var x = window.matchMedia("(max-width: 400px)");
+
+
     if (index == 0) {
         clear();
         stars();
@@ -40,6 +43,7 @@ function back(index) {
     } else if (index == 2) {
         clear();
         createRain();
+        //        x.addListener(createRain);
     } else if (index == 3) {
         clear();
         createSnow();
@@ -82,19 +86,21 @@ function randRange(maxNum, minNum) {
 }
 
 function createRain() {
-    //        $('#rain').append('<img src="Images/rain1.jpg" alt ="rain" class="night img-fluid img-responsive"/>');
+    var dropLeft, dropTop;
 
     $("body").css({
-        
         "background-image": 'url(Images/rain1.jpg)',
-//        "background-size": 'cover',
-//        "background-repeat": 'no-repeat',
-//        "background-position": 'center center',
-//        "background-attachment": 'fixed',
     });
+
+    console.log($(window).width());
     for (i = 0; i < nbDrop; i++) {
-        var dropLeft = randRange(0, 2000);
-        var dropTop = randRange(-1000, 1500);
+        if ($(window).width() <= 500) {
+            dropLeft = randRange(0, 370);
+            dropTop = randRange(-1000, 1500);
+        } else {
+            dropLeft = randRange(0, 2000);
+            dropTop = randRange(-1000, 1500);
+        }
         $('#rain').append('<div class="drop" id="drop' + i + '"></div>');
         $('#drop' + i).css('left', dropLeft);
         $('#drop' + i).css('top', dropTop);
@@ -102,16 +108,18 @@ function createRain() {
 }
 
 function createSnow() {
+    var dropLeft, dropTop;
     $("body").css({
-                "background-image": 'url(Images/snow.jpg)',
-        //        "background-size": 'cover',
-        //        "background-repeat": 'no-repeat',
-        //        "background-position": 'center center',
-        //        "background-attachment": 'fixed',
+        "background-image": 'url(Images/snow.jpg)',
     });
     for (i = 0; i < nbDrop; i++) {
-        var dropLeft = randRange(0, 3000);
-        var dropTop = randRange(-1000, 2000);
+        if ($(window).width() <= 500) {
+            dropLeft = randRange(0, 370);
+            dropTop = randRange(-1000, 2000);
+        } else {
+        dropLeft = randRange(0, 3000);
+        dropTop = randRange(-1000, 2000);
+        }
 
         $('#rain').append('<div class="snowdrop" id="snowdrop' + i + '"></div>');
         $('#snowdrop' + i).css('left', dropLeft);
@@ -122,10 +130,10 @@ function createSnow() {
 function stars() {
     $("body").css({
         "background-color": 'black',
-        "background-size": 'cover',
-        "background-repeat": 'no-repeat',
-        "background-position": 'center center',
-        "background-attachment": 'fixed',
+        //        "background-size": 'cover',
+        //        "background-repeat": 'no-repeat',
+        //        "background-position": 'center center',
+        //        "background-attachment": 'fixed',
     });
     $('#night').append('<div class="stars"></div><div class="twinkling"></div><div class="clouds"></div>');
 }
