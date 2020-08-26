@@ -1,11 +1,11 @@
-var app=null;
+var app = null;
 var nbDrop = 800;
 var image;
 var prev = 5;
 window.addEventListener('load', () => {
     var sounds = document.querySelectorAll(".music");
     var keys = document.querySelectorAll(".keys div");
-    
+
 
     keys.forEach((key, index) => {
         key.addEventListener("click", function () {
@@ -82,14 +82,15 @@ function randRange(maxNum, minNum) {
 }
 
 function createRain() {
-//        $('#rain').append('<img src="Images/rain1.jpg" alt ="rain" class="night img-fluid img-responsive"/>');
+    //        $('#rain').append('<img src="Images/rain1.jpg" alt ="rain" class="night img-fluid img-responsive"/>');
 
     $("body").css({
+        
         "background-image": 'url(Images/rain1.jpg)',
-        "background-size": 'cover',
-        "background-repeat": 'no-repeat',
-          "background-position": 'center center',
-          "background-attachment": 'fixed',
+//        "background-size": 'cover',
+//        "background-repeat": 'no-repeat',
+//        "background-position": 'center center',
+//        "background-attachment": 'fixed',
     });
     for (i = 0; i < nbDrop; i++) {
         var dropLeft = randRange(0, 2000);
@@ -102,11 +103,11 @@ function createRain() {
 
 function createSnow() {
     $("body").css({
-        "background-image": 'url(Images/snow.jpg)',
-        "background-size": 'cover',
-        "background-repeat": 'no-repeat',
-        "background-position": 'center center',
-        "background-attachment": 'fixed',
+                "background-image": 'url(Images/snow.jpg)',
+        //        "background-size": 'cover',
+        //        "background-repeat": 'no-repeat',
+        //        "background-position": 'center center',
+        //        "background-attachment": 'fixed',
     });
     for (i = 0; i < nbDrop; i++) {
         var dropLeft = randRange(0, 3000);
@@ -123,22 +124,25 @@ function stars() {
         "background-color": 'black',
         "background-size": 'cover',
         "background-repeat": 'no-repeat',
-          "background-position": 'center center',
-          "background-attachment": 'fixed',
+        "background-position": 'center center',
+        "background-attachment": 'fixed',
     });
     $('#night').append('<div class="stars"></div><div class="twinkling"></div><div class="clouds"></div>');
 }
 
 function clear() {
     //$0.remove();
-    if(prev == 1){
-     app.destroy();
-     $("canvas").css({
-        "width": '0',
-        "height": '0',
+    if (prev == 1) {
+        app.destroy();
+        $("canvas").css({
+            "width": '0',
+            "height": '0',
         });
-        }
-    $("body").css({"background": '',});
+    }
+    $("body").css({
+        "background-image": '',
+        "background-color": '',
+    });
     $('.night').remove();
     $('.snowdrop').remove();
     $('.drop').remove();
