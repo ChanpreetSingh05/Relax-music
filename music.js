@@ -112,19 +112,29 @@ function createSnow() {
     $("body").css({
         "background-image": 'url(Images/snow.jpg)',
     });
-    for (i = 0; i < nbDrop; i++) {
-        if ($(window).width() <= 500) {
+
+    if ($(window).width() <= 500) {
+        for (i = 0; i < nbDrop; i++) {
+
             dropLeft = randRange(0, 370);
             dropTop = randRange(-1000, 2000);
-        } else {
-        dropLeft = randRange(0, 3000);
-        dropTop = randRange(-1000, 2000);
-        }
 
-        $('#rain').append('<div class="snowdrop" id="snowdrop' + i + '"></div>');
-        $('#snowdrop' + i).css('left', dropLeft);
-        $('#snowdrop' + i).css('top', dropTop);
+            $('#rain').append('<div class="snowdrop" id="snowdrop' + i + '"></div>');
+            $('#snowdrop' + i).css('left', dropLeft);
+            $('#snowdrop' + i).css('top', dropTop);
+        }
+    } else {
+        for (i = 0; i < nbDrop; i++) {
+
+            dropLeft = randRange(0, 3000);
+            dropTop = randRange(-1000, 2000);
+
+            $('#rain').append('<div class="snowdrop" id="snowdrop' + i + '"></div>');
+            $('#snowdrop' + i).css('left', dropLeft);
+            $('#snowdrop' + i).css('top', dropTop);
+        }
     }
+
 }
 
 function stars() {
