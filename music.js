@@ -87,15 +87,9 @@ function createRain() {
     $("body").css({
         "background-image": 'url(Images/rain1.jpg)',
         "background-size": 'cover',
-    
-'-webkit-background-size': '100%', 
-'-moz-background-size': '100%', 
-'-o-background-size': '100%',
-'background-size': '100%', 
-'-webkit-background-size': 'cover', 
-'-moz-background-size': 'cover', 
-'-o-background-size': 'cover',
-'background-size': 'cover',
+        "background-repeat": 'no-repeat',
+          "background-position": 'center center',
+          "background-attachment": 'fixed'
     });
     for (i = 0; i < nbDrop; i++) {
         var dropLeft = randRange(0, 2000);
@@ -111,6 +105,8 @@ function createSnow() {
         "background-image": 'url(Images/snow.jpg)',
         "background-size": 'cover',
         "background-repeat": 'no-repeat',
+          "background-position": 'center center',
+          "background-attachment": 'fixed'
     });
     for (i = 0; i < nbDrop; i++) {
         var dropLeft = randRange(0, 3000);
