@@ -89,7 +89,7 @@ function createRain() {
         "background-size": 'cover',
         "background-repeat": 'no-repeat',
           "background-position": 'center center',
-          "background-attachment": 'fixed'
+          "background-attachment": 'fixed',
     });
     for (i = 0; i < nbDrop; i++) {
         var dropLeft = randRange(0, 2000);
@@ -105,8 +105,8 @@ function createSnow() {
         "background-image": 'url(Images/snow.jpg)',
         "background-size": 'cover',
         "background-repeat": 'no-repeat',
-          "background-position": 'center center',
-          "background-attachment": 'fixed'
+        "background-position": 'center center',
+        "background-attachment": 'fixed',
     });
     for (i = 0; i < nbDrop; i++) {
         var dropLeft = randRange(0, 3000);
@@ -123,6 +123,8 @@ function stars() {
         "background-color": 'black',
         "background-size": 'cover',
         "background-repeat": 'no-repeat',
+          "background-position": 'center center',
+          "background-attachment": 'fixed',
     });
     $('#night').append('<div class="stars"></div><div class="twinkling"></div><div class="clouds"></div>');
 }
